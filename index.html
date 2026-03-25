@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SecureBank - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Welcome to SecureBank Portal</h1>
+
+    <!-- Navigation -->
+    <nav class="box-nav">
+        <a href="{{ url_for('home') }}" class="nav-home">Home</a>
+        <a href="{{ url_for('register') }}" class="nav-register">Register</a>
+        <a href="{{ url_for('login') }}" class="nav-register">Login</a>
+        <a href="{{ url_for('accounts') }}" class="nav-accounts">Accounts</a>
+        <a href="{{ url_for('transactions') }}" class="nav-transactions">Transactions</a>
+        <a href="{{ url_for('loans') }}" class="nav-loans">Loans</a>
+    </nav>
+
+    <!-- About -->
+    <div class="card">
+        <h2>About Us</h2>
+        <p>
+            SecureBank provides safe and reliable banking services.
+            You can manage accounts, check transactions, and apply for loans easily.
+        </p>
+    </div>
+
+    <!-- Features -->
+    <div class="card">
+        <h2>Our Services</h2>
+        <ul style="padding-left:20px;">
+            <li>✔ Account Management</li>
+            <li>✔ Secure Transactions</li>
+            <li>✔ Loan Services</li>
+            <li>✔ Easy Online Access</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align:center; margin-top:20px; font-size:14px; color:#777;">
+        © 2026 SecureBank
+    </footer>
+
+</div>
+
+</body>
+</html>

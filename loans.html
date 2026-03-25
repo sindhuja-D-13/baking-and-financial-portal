@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SecureBank - Loans</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Loan Services</h1>
+
+    <!-- Navigation -->
+    <nav class="box-nav">
+        <a href="{{ url_for('home') }}" class="nav-home">Home</a>
+        <a href="{{ url_for('accounts') }}" class="nav-accounts">Accounts</a>
+        <a href="{{ url_for('transactions') }}" class="nav-transactions">Transactions</a>
+        <a href="{{ url_for('loans') }}" class="nav-loans">Loans</a>
+    </nav>
+
+    <!-- Messages -->
+    {% if success %}
+        <p class="success">{{ success }}</p>
+    {% elif error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <!-- Loan Form -->
+    <div class="card">
+        <h2>Apply for Loan</h2>
+
+        <form method="post">
+
+            <label>Loan Type</label>
+            <select name="loan_type" required>
+                <option value="">-- Select Loan Type --</option>
+                <option>Personal Loan</option>
+                <option>Home Loan</option>
+                <option>Car Loan</option>
+                <option>Business Loan</option>
+            </select>
+
+            <label>Loan Amount ($)</label>
+            <input type="number" name="loan_amount" placeholder="Enter amount" required>
+
+            <label>Loan Duration (Years)</label>
+            <input type="number" name="loan_duration" placeholder="Enter duration" required>
+
+            <label>Annual Income ($)</label>
+            <input type="number" name="annual_income" placeholder="Enter income" required>
+
+            <input type="submit" value="Apply Now" class="black-btn">
+
+        </form>
+    </div>
+
+    <!-- Offers -->
+    <div class="card">
+        <h2>Current Offers</h2>
+        <ul style="padding-left:20px;">
+            <li>✔ Personal Loan – Interest from 10%</li>
+            <li>✔ Home Loan – Interest from 7%</li>
+            <li>✔ Car Loan – Interest from 8%</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align:center; margin-top:20px; font-size:14px; color:#777;">
+        © 2026 SecureBank
+    </footer>
+
+</div>
+
+</body>
+</html>
